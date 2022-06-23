@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.govind8061.simplesimple.MainViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={mainViewModel.facts}"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/etQuote"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/tvShowData"
+            android:text="@{mainViewModel.facts}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/etQuote"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ChangeQuote"
+            android:onClick="@{()-> mainViewModel.changeQuote()}"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tvShowData"/>
+
+    </RelativeLayout>
+</layout>
